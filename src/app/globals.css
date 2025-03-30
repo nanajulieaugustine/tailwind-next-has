@@ -1,26 +1,23 @@
 @import "tailwindcss";
 
+
+@theme {
+  --text-fluid-xs: var(--step--1);
+  --text-fluid-sm: var(--step-0);
+  --text-fluid-md: var(--step-1);
+  --text-fluid-lg: var(--step-2);
+  --text-fluid-xl: var(--step-3);
+  --text-fluid-2xl: var(--step-4);
+  --text-fluid-3xl: var(--step-5);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  --step--2: clamp(0.7813rem, 0.7714rem + 0.0382cqw, 0.8rem);
+  --step--1: clamp(0.9375rem, 0.9046rem + 0.1272cqw, 1rem);
+  --step-0: clamp(1.125rem, 1.0592rem + 0.2545cqw, 1.25rem);
+  --step-1: clamp(1.35rem, 1.2381rem + 0.4326cqw, 1.5625rem);
+  --step-2: clamp(1.62rem, 1.4445rem + 0.6781cqw, 1.9531rem);
+  --step-3: clamp(1.944rem, 1.682rem + 1.0125cqw, 2.4414rem);
+  --step-4: clamp(2.3328rem, 1.9541rem + 1.4635cqw, 3.0518rem);
+  --step-5: clamp(2.7994rem, 2.2646rem + 2.0668cqw, 3.8147rem);
 }
