@@ -30,10 +30,14 @@ export default function Home() {
 
 function Card(props) {
   return (
-    <li className="overflow-hidden rounded-xl bg-white p-4 shadow-md ring-1 ring-black/5 transition hover:-translate-y-px hover:shadow-lg">
+    <li className="group overflow-hidden rounded-xl bg-white p-4 shadow-md ring-1 ring-black/5 transition hover:-translate-y-px hover:shadow-lg not-[:has(img,h2)]:text-2xl/[1.4] has-[img]:p-0">
       {props.image && <img src={props.image} alt="" className="mb-4" />}
-      <div className="grid gap-2">
-        {props.title && <h2 className="text-xl font-medium">{props.title}</h2>}
+      <div className="grid gap-2 group-has-[img]:p-4">
+        {props.title && (
+          <h2 className="text-xl font-medium group-not-[:has(img)]:text-2xl">
+            {props.title}
+          </h2>
+        )}
         <p className="text-slate-700">{props.text}</p>
       </div>
     </li>
